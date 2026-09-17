@@ -3,102 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASF Golden Hour — Sol ao vivo para fotos de surf</title>
-<meta name="description" content="Nascer e pôr do sol ao vivo no litoral norte de SP, com contagem regressiva para a golden hour — a melhor luz para fotos de surf. Satélite do app ASF.">
+<title>ASF Golden Hour — ASF</title>
+<meta name="description" content="Nascer/pôr do sol ao vivo e contagem regressiva para fotos de surf">
 <style>
-:root{--rosa:#e63970;--areia:#fff5ee;--mar:#0b6e6e;--escuro:#12303a}
+:root{--rosa:#ff4d8d;--roxo:#7b2ff7;--areia:#fff5ec;--mar:#00c2cb}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
-body{background:var(--areia);color:var(--escuro)}
-header{background:linear-gradient(135deg,#f2994a,#eb4186);color:#fff;padding:2.2rem 1rem;text-align:center}
-header h1{font-size:2rem}header p{opacity:.95;margin-top:.4rem;font-size:.95rem}
-nav{background:var(--escuro);display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem;padding:.5rem;position:sticky;top:0;z-index:10}
-nav a{color:#fff;text-decoration:none;padding:.4rem .65rem;border-radius:.5rem;font-size:.82rem}
-nav a:hover,nav a.ativo{background:var(--rosa)}
-main{max-width:720px;margin:0 auto;padding:2rem 1rem}
-.card{background:#fff;border-radius:1rem;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 10px rgba(0,0,0,.07)}
-.card h2{color:#eb4186;margin-bottom:.6rem}
-select{width:100%;padding:.7rem;border:2px solid #eee;border-radius:.5rem;font-size:1rem}
-.sol{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}
-.sol div{border-radius:.75rem;padding:1rem;text-align:center}
-.nascer{background:#fef3c7;color:#92400e}.por{background:#fce7f3;color:#9d174d}
-.sol .hora{font-size:1.6rem;font-weight:bold}
-.count{text-align:center;background:linear-gradient(135deg,#fff7ed,#fdf2f8);border-radius:1rem;padding:1.5rem;margin-top:1rem}
-.count .t{font-size:2.6rem;font-weight:800;color:#eb4186;font-variant-numeric:tabular-nums}
-.golden{background:#fef9c3!important;border:2px solid #eab308}
-footer{background:var(--escuro);color:#cfe;padding:1.5rem;text-align:center;font-size:.85rem}
-footer a{color:#ff9ec0}
+body{background:linear-gradient(160deg,#fff5ec,#ffe3f1 60%,#e0f7fa);min-height:100vh;color:#333}
+header{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;padding:2rem 1rem;text-align:center}
+header h1{font-size:2rem} header p{opacity:.9;margin-top:.4rem}
+nav{display:flex;flex-wrap:wrap;gap:.3rem;justify-content:center;padding:.7rem;background:#fff;box-shadow:0 2px 8px #0001;position:sticky;top:0;z-index:10;max-height:38vh;overflow:auto}
+nav a{background:var(--areia);border:1px solid #ffd3e6;color:#c2185b;padding:.25rem .6rem;border-radius:20px;font-size:.72rem;text-decoration:none}
+nav a:hover{background:var(--rosa);color:#fff}
+main{max-width:760px;margin:1.5rem auto;padding:0 1rem}
+.card{background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px #7b2ff720;margin-bottom:1.2rem}
+.card h2{color:var(--roxo);margin-bottom:.6rem;font-size:1.2rem}
+button{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;border:none;padding:.6rem 1.2rem;border-radius:24px;font-size:1rem;cursor:pointer}
+input,select,textarea{padding:.5rem;border:1px solid #ddd;border-radius:10px;width:100%;margin:.3rem 0;font-size:1rem}
+.xp{position:fixed;bottom:1rem;right:1rem;background:#fff;border:2px solid var(--rosa);border-radius:24px;padding:.4rem 1rem;font-weight:bold;color:var(--roxo);box-shadow:0 4px 12px #0002;z-index:20}
+footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
 </style>
 </head>
 <body>
-<header><h1>📸 ASF Golden Hour</h1><p>A luz perfeita para fotos e sessões de surf — ao vivo</p></header>
-<nav>
-<a href="https://acarolmourad-commits.github.io/asf-app/">🏄‍♀️ App</a>
-<a href="https://acarolmourad-commits.github.io/asf-praias/">🏖️ Praias</a>
-<a href="https://acarolmourad-commits.github.io/asf-previsao/">🌊 Previsão</a>
-<a href="https://acarolmourad-commits.github.io/asf-mare/">🌙 Maré</a>
-<a href="https://acarolmourad-commits.github.io/asf-mapa/">🗺️ Mapa</a>
-<a class="ativo" href="https://acarolmourad-commits.github.io/asf-goldenhour/">📸 Golden Hour</a>
-<a href="https://acarolmourad-commits.github.io/asf-treino/">💪 Treino</a>
-<a href="https://acarolmourad-commits.github.io/asf-diario/">📝 Diário</a>
-<a href="https://acarolmourad-commits.github.io/asf-yoga/">🧘‍♀️ Yoga</a>
-<a href="https://acarolmourad-commits.github.io/asf-nutricao/">🥗 Nutrição</a>
-<a href="https://acarolmourad-commits.github.io/asf-ranking/">🏆 Ranking</a>
-<a href="https://acarolmourad-commits.github.io/asf-eventos/">📅 Eventos</a>
-<a href="https://acarolmourad-commits.github.io/asf-glossario/">📖 Glossário</a>
-<a href="https://acarolmourad-commits.github.io/asf-comunidade/">🌸 Comunidade</a>
-<a href="https://acarolmourad-commits.github.io/asf-seguranca/">🛟 Segurança</a>
-<a href="https://acarolmourad-commits.github.io/asf-sos/">🆘 SOS</a>
-<a href="https://acarolmourad-commits.github.io/asf-equipamento/">🏄 Equipamento</a>
-<a href="https://acarolmourad-commits.github.io/asf-quiz/">❓ Quiz</a>
-<a href="https://acarolmourad-commits.github.io/asf-eco/">🌱 Eco</a>
-</nav>
+<header><h1>🌅 ASF Golden Hour</h1><p>Nascer/pôr do sol e contagem regressiva para fotos de surf</p></header>
+<nav><a href="https://acarolmourad-commits.github.io/asf-app/">🏄‍♀️ ASF App</a>
+<a href="https://acarolmourad-commits.github.io/asf-praias/">Praias</a>
+<a href="https://acarolmourad-commits.github.io/asf-previsao/">Previsão</a>
+<a href="https://acarolmourad-commits.github.io/asf-treino/">Treino</a>
+<a href="https://acarolmourad-commits.github.io/asf-eventos/">Eventos</a>
+<a href="https://acarolmourad-commits.github.io/asf-glossario/">Glossário</a>
+<a href="https://acarolmourad-commits.github.io/asf-seguranca/">Segurança</a>
+<a href="https://acarolmourad-commits.github.io/asf-comunidade/">Comunidade</a>
+<a href="https://acarolmourad-commits.github.io/asf-equipamento/">Equipamento</a>
+<a href="https://acarolmourad-commits.github.io/asf-quiz/">Quiz</a>
+<a href="https://acarolmourad-commits.github.io/asf-nutricao/">Nutrição</a>
+<a href="https://acarolmourad-commits.github.io/asf-historia/">História</a>
+<a href="https://acarolmourad-commits.github.io/asf-viagens/">Viagens</a>
+<a href="https://acarolmourad-commits.github.io/asf-bemestar/">Bem-estar</a>
+<a href="https://acarolmourad-commits.github.io/asf-diario/">Diário</a>
+<a href="https://acarolmourad-commits.github.io/asf-eco/">Eco</a>
+<a href="https://acarolmourad-commits.github.io/asf-kids/">Kids</a>
+<a href="https://acarolmourad-commits.github.io/asf-mental/">Mental</a>
+<a href="https://acarolmourad-commits.github.io/asf-ranking/">Ranking</a>
+<a href="https://acarolmourad-commits.github.io/asf-respira/">Respira</a>
+<a href="https://acarolmourad-commits.github.io/asf-sos/">Sos</a>
+<a href="https://acarolmourad-commits.github.io/asf-volume/">Volume</a>
+<a href="https://acarolmourad-commits.github.io/asf-yoga/">Yoga</a>
+<a href="https://acarolmourad-commits.github.io/asf-alerta/">Alerta</a>
+<a href="https://acarolmourad-commits.github.io/asf-apnea/">Apneia</a>
+<a href="https://acarolmourad-commits.github.io/asf-carona/">Carona</a>
+<a href="https://acarolmourad-commits.github.io/asf-clube/">Clube</a>
+<a href="https://acarolmourad-commits.github.io/asf-desafio/">Desafio30</a>
+<a href="https://acarolmourad-commits.github.io/asf-galeria/">Galeria</a>
+<a href="https://acarolmourad-commits.github.io/asf-leitura/">LeituraMar</a>
+<a href="https://acarolmourad-commits.github.io/asf-manobras/">Manobras</a>
+<a href="https://acarolmourad-commits.github.io/asf-mapa/">Mapa</a>
+<a href="https://acarolmourad-commits.github.io/asf-mare/">Maré</a>
+<a href="https://acarolmourad-commits.github.io/asf-mentorias/">Mentorias</a>
+<a href="https://acarolmourad-commits.github.io/asf-mercado/">Mercado</a>
+<a href="https://acarolmourad-commits.github.io/asf-parceiras/">Parceiras</a>
+<a href="https://acarolmourad-commits.github.io/asf-ponto/">Ponto</a>
+<a href="https://acarolmourad-commits.github.io/asf-popup/">Pop-up</a>
+<a href="https://acarolmourad-commits.github.io/asf-sonhos/">Sonhos</a></nav>
 <main>
-<div class="card"><h2>Escolha a praia 🏖️</h2>
-<select id="praia">
-<option value="-23.782,-45.669">Praia da Baleia</option>
-<option value="-23.774,-45.638">Camburizinho</option>
-<option value="-23.818,-45.563">Maresias</option>
-<option value="-23.402,-45.003">Itamambuca</option>
-<option value="-23.769,-45.736">Juquehy</option>
-<option value="-23.609,-45.418">Praia Brava (Caraguá)</option>
-</select>
-<div class="sol">
-<div class="nascer">🌅 Nascer do sol<div class="hora" id="nascer">—</div><small>Golden hour: até <span id="g1">—</span></small></div>
-<div class="por">🌇 Pôr do sol<div class="hora" id="por">—</div><small>Golden hour: a partir de <span id="g2">—</span></small></div>
-</div></div>
-<div class="count" id="countBox"><h2 id="countLabel">Próxima golden hour em</h2><div class="t" id="count">--:--:--</div><p style="color:#777;font-size:.85rem;margin-top:.5rem">Dados: Open-Meteo (astronomia real) · Combine com a <a href="https://acarolmourad-commits.github.io/asf-previsao/">previsão de ondas</a> e a <a href="https://acarolmourad-commits.github.io/asf-mare/">tábua de marés</a> para a sessão perfeita.</p></div>
+<div class="card"><h2>🌇 Golden Hour de hoje (Litoral Norte SP)</h2>
+<p>🌄 Nascer do sol: <b>~6:05</b> · golden hour: 5:45–6:45</p>
+<p>🌇 Pôr do sol: <b>~18:10</b> · golden hour: 17:20–18:20</p>
+<h3 style="margin-top:.8rem">⏳ Próxima golden hour em:</h3>
+<h1 id="cd" style="color:var(--rosa);font-size:2.2rem"></h1></div>
+<div class="card"><h2>📸 Dicas de foto de surf</h2><ul><li>Luz lateral dourada valoriza a parede da onda</li><li>Baixe o ISO, shutter 1/1000+ pra congelar o drop</li><li>Poste seu clique na <a href='https://acarolmourad-commits.github.io/asf-galeria/'>ASF Galeria</a></li></ul></div>
+<div class="card"><h2>🌐 Ecossistema ASF</h2><p>Este app faz parte da constelação ASF — Associação de Surf Feminino. Ganhe XP aqui e veja seu progresso no <a href="https://acarolmourad-commits.github.io/asf-ranking/">ASF Ranking</a>. App principal: <a href="https://acarolmourad-commits.github.io/asf-app/">ASF App</a>.</p></div>
 </main>
-<footer>Parte do ecossistema <a href="https://acarolmourad-commits.github.io/asf-app/">ASF — Associação de Surf Feminino</a> · Publicado via GitHub Pages</footer>
+<div class="xp">⭐ XP: <span id="xp">0</span></div>
+<footer>ASF — Associação de Surf Feminino · Feito com 🌊 e 💜 · <a href="https://acarolmourad-commits.github.io/">hub</a> · <a href="https://acarolmourad-commits.github.io/asf-app/">asf-app</a></footer>
 <script>
-let nascer,por,timer;
-function carregar(){
- const[lat,lon]=document.getElementById('praia').value.split(',');
- fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=sunrise,sunset&timezone=America/Sao_Paulo&forecast_days=1`)
- .then(r=>r.json()).then(d=>{
-  nascer=new Date(d.daily.sunrise[0]);por=new Date(d.daily.sunset[0]);
-  const g1=new Date(nascer.getTime()+3600000),g2=new Date(por.getTime()-3600000);
-  const f=t=>t.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-  document.getElementById('nascer').textContent=f(nascer);document.getElementById('por').textContent=f(por);
-  document.getElementById('g1').textContent=f(g1);document.getElementById('g2').textContent=f(g2);
-  tick();});
-}
-function tick(){
- clearInterval(timer);
- timer=setInterval(()=>{
-  const agora=new Date(),g1fim=new Date(nascer.getTime()+3600000),g2ini=new Date(por.getTime()-3600000);
-  let alvo,label,golden=false;
-  if(agora>=nascer&&agora<=g1fim){golden=true;label='✨ GOLDEN HOUR AGORA! Termina em';alvo=g1fim;}
-  else if(agora>=g2ini&&agora<=por){golden=true;label='✨ GOLDEN HOUR AGORA! Termina em';alvo=por;}
-  else if(agora<nascer){label='Nascer do sol em';alvo=nascer;}
-  else if(agora<g2ini){label='Golden hour da tarde em';alvo=g2ini;}
-  else{label='Nascer do sol de amanhã em';alvo=new Date(nascer.getTime()+86400000);}
-  const diff=Math.max(0,alvo-agora),h=Math.floor(diff/3600000),m=Math.floor(diff/60000)%60,s=Math.floor(diff/1000)%60;
- document.getElementById('countLabel').textContent=label;
-  document.getElementById('count').textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-  document.getElementById('countBox').classList.toggle('golden',golden);
- },1000);
-}
-document.getElementById('praia').onchange=carregar;carregar();
+const XP=()=>parseInt(localStorage.getItem('asf_xp')||'0');
+function addXP(n){localStorage.setItem('asf_xp',XP()+n);document.getElementById('xp').textContent=XP();}
+document.getElementById('xp').textContent=XP();
+function tick(){const now=new Date();const g1=new Date(now);g1.setHours(5,45,0,0);const g2=new Date(now);g2.setHours(17,20,0,0);let t=g1>now?g1:g2>now?g2:(()=>{const n=new Date(now);n.setDate(n.getDate()+1);n.setHours(5,45,0,0);return n;})();let d=Math.floor((t-now)/1000);const h=Math.floor(d/3600),m=Math.floor(d%3600/60),s=d%60;document.getElementById('cd').textContent=`${h}h ${m}m ${s}s`;}tick();setInterval(tick,1000);addXP(2);
 </script>
 </body>
 </html>
