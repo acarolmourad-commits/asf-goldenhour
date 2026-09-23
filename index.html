@@ -103,5 +103,6 @@ document.getElementById('xp').textContent=XP();
 function tick(){const now=new Date();const g1=new Date(now);g1.setHours(5,45,0,0);const g2=new Date(now);g2.setHours(17,20,0,0);let t=g1>now?g1:g2>now?g2:(()=>{const n=new Date(now);n.setDate(n.getDate()+1);n.setHours(5,45,0,0);return n;})();let d=Math.floor((t-now)/1000);const h=Math.floor(d/3600),m=Math.floor(d%3600/60),s=d%60;document.getElementById('cd').textContent=`${h}h ${m}m ${s}s`;}tick();setInterval(tick,1000);addXP(2);
 </script>
 <footer style="text-align:center;padding:18px 12px;font-size:12px;color:#567;background:transparent">ASF — Associação de Surf Feminino · <a href="https://acarolmourad-commits.github.io/asf-app/privacidade.html" style="color:#00A8CC">Privacidade</a> · <a href="https://acarolmourad-commits.github.io/asf-app/cookies.html" style="color:#00A8CC">Cookies</a> · <a href="https://acarolmourad-commits.github.io/asf-app/termos-de-uso.html" style="color:#00A8CC">Termos</a></footer>
+<script src="https://acarolmourad-commits.github.io/asf-app/asf-network.js" defer></script>
 </body>
 </html>
