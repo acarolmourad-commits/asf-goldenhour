@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://acarolmourad-commits.github.io/asf-goldenhour/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://goldenhour.asf.surf/</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://goldenhour.asf.surf/artigos/golden-hour-melhor-horario-para-surfar.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
